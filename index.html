@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Tab Content</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Sticky Button Bar -->
+    <div class="tab-bar">
+        <div class="button-container">
+            <button id="btn1" onclick="showContent('content1')">Show Content 1</button>
+            <button id="btn2" onclick="showContent('content2')">Show Content 2</button>
+            <button id="btn3" onclick="showContent('content3')">Show Content 3</button>
+        </div>
+    </div>
+
+    <!-- Landing Section -->
+    <section class="landing">
+        <h1>Welcome to My Page</h1>
+        <p>Scroll down to view the content sections.</p>
+    </section>
+
+    <!-- Content Sections -->
+    <div id="content1" class="content-box">
+        <h2>Click the Moving Box!</h2>
+        <div id="game-container">
+            <div id="target-box"></div>
+        </div>
+        <p id="score-display">Score: 0</p>
+        <button id="reset-game-btn">Reset Game</button>
+
+
+    </div>
+
+    <div id="content2" class="content-box hidden">
+        <p>This is Content 2.</p>
+    </div>
+
+    <div id="content3" class="content-box hidden">
+        <p>This is Content 3.</p>
+    </div>
+
+</body>
+
+</html>
