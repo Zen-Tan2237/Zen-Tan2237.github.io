@@ -2,50 +2,597 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My homepage</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-
-    <!-- Sticky Button Bar -->
-    <div class="tab-bar">
-        <div class="button-container">
-            <button id="btn1" onclick="showContent('content1')">Show Content 1</button>
-            <button id="btn2" onclick="showContent('content2')">Show Content 2</button>
-            <button id="btn3" onclick="showContent('content3')">Show Content 3</button>
-        </div>
+  <header class="taskbar">
+    <div class="button-container">
+      <button id="btn1" onclick="showContent('content1'), removeWelcomeMessage()">The Singapore MRT</button>
+      <button id="btn2" onclick="showContent('content2'), removeWelcomeMessage()">Public Buses in Singapore</button>
+      <button id="btn3" onclick="showContent('content3'), removeWelcomeMessage()">Fun facts and trivia quiz</button>
     </div>
+    <div class="button-container-mobile">
+      <button id="show-mobileTaskbar"><div class="sprite sprite1"></div></button>
+      <table class="hidden" id="mobile-taskbar">
+        <tr>
+          <td><button id="btn1" onclick="showContent('content1'), removeWelcomeMessage()">The Singapore MRT</button>
+          </td>
+        </tr>
+        <tr>
+          <td><button id="btn2" onclick="showContent('content2'), removeWelcomeMessage()">Public Buses in
+              Singapore</button></td>
+        </tr>
+        <tr>
+          <td><button id="btn3" onclick="showContent('content3'), removeWelcomeMessage()">Fun facts and trivia quiz</button></td>
+        </tr>
+      </table>
+    </div>
+  </header>
 
-    <!-- Landing Section -->
-    <section class="landing">
-        <h1>Welcome to My Page</h1>
-        <p>Scroll down to view the content sections.</p>
-    </section>
+  <section class="landing-section animated-entry" id="landing-section">
+    <h1>Zenpedia 2.0</h1>
+    <p>Scroll down or click the taskbar to switch content.</p>
+  </section>
 
-    <!-- Content Sections -->
+
+  <!--Most images found from either: sgtrains.com and wikipedia!-->
+  <main class="content-area">
     <div id="content1" class="content-box">
-        <h2>Click the Moving Box!</h2>
-        <div id="game-container">
-            <div id="target-box"></div>
+      <section>
+        <h2>The Singapore MRT</h2>
+        <h3>Introduction</h3>
+      </section>
+      <section>
+        <h3>Key Milestones</h3>
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">Early Beginnings</p>
+            <ul class="sub-list">
+              <li>1967: Planning for the MRT system begins.</li>
+              <li>Oct 1983: Start of construction.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/newsMRTtrainbuild.webp" alt="MRT Train Build" width="300" class="milestone-image">
+            <img src="images/constructionRafflesPlace.webp" alt="Raffles Place MRT Station Construction" width="300"
+              class="milestone-image">
+          </div>
         </div>
-        <p id="score-display">Score: 0</p>
-        <button id="reset-game-btn">Reset Game</button>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">Initial Opening</p>
+            <ul class="sub-list">
+              <li>7 Nov 1987: MRT system officially opens from Yio Chu Kang to Toa Payoh</li>
+              <li>6 Jul 1990: Initial planned system of the MRT system opens. <br>(consisting of the North South Line,
+                "Branch
+                Line (consisting of Jurong East to Chua Chu Kang)" and East West Line)</li>
+              <li>10 Feb 1996: Woodlands extension from Yishun to Chua Chu Kang opens, taking over the "Branch Line"
+              </li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/woodlandsInThe1990s.jpg" alt="Woodlands MRT Station in the 1990s" width="300"
+              class="milestone-image">
+            <img src="images/MRTMap1990.webp" alt="MRT Map in 1990" width="300" class="milestone-image">
+          </div>
+        </div>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">The system expands...</p>
+            <ul class="sub-list">
+              <li>6 Nov 1999: Bukit Panjang LRT Line opens.</li>
+              <li>18 Jan 2003: Sengkang LRT Line (East Loop) opens. West Loop opened on 29 Jan 2005.</li>
+              <li>20 Jun 2003: North East Line opens.</li>
+              <li>29 Jan 2005: Punggol LRT Line (East Loop) opens. West loop opened on 29 Jun 2014</li>
+              <li>28 May 2009: Circle Line opens from Bartley to Marymount. Then on 17 Apr 2010, Circle Line opens
+                from
+                Bartley to Dhoby Ghaut after delays due to the Nicoll Highway collapse.</li>
+              <li>8 Oct 2011: Circle Line fully opens.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/MRTMap2011.webp" alt="MRT Map 2011" class="milestone-image">
+          </div>
+        </div>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">Making alternative routes available</p>
+            <ul class="sub-list">
+              <li>22 Dec 2013: Downtown Line opens from Chinatown to Bugis. Then on 27 Dec 2015, Downtown Line opens
+                from
+                Bugis to Expo.</li>
+              <li>21 Oct 2017: Downtown Line fully opens.</li>
+              <li>21 Jan 2020: Thomson-East Coast Line opens from Woodlands North to Woodlands South.</li>
+              <li>23 Jun 2024: Thomson-East Coast Line fully opens.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/MRTMapNow.webp" alt="MRT Map current" class="milestone-image">
+          </div>
+        </div>
+        <br>
+        <section>
+          <h2 class="hiddenH2titletostopthevalidatorfromcomplaining">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</h2>
+          <p>Now, there are...</p>
+          <p class="current-upper">265.5km</p>
+          <p class="current-lower">of rail</p>
+          <p class="current-upper">185 stations</p>
+          <p class="current-lower">on 6 MRT and 3 LRT lines</p>
+          <p class="current-upper">3.9 million passengers</p>
+          <p class="current-lower">that commute every day</p>
+        </section>
 
 
+        <section>
+          <h3>Future Developments</h3>
+          <p>The MRT system continues to expand with new lines and extensions planned</p>
+          <ul>
+            <li>1H 2026 Circle Line Stage 6: HarbourFront to Marina Bay (3 stations, fully closing the circle!)</li>
+            <li>2H 2026 Thomson-East Coast Line Stage 5: Bayshore to Sungei Bedok (2 stations)</li>
+            <li>2H 2026 Downtown Line Stage 3 Extension: Expo to Sungei Bedok (2 stations)</li>
+            <li>End-2026 Johor Bahru-Singapore RTS Link</li>
+            <li>2027: Jurong Region Line Stage 1</li>
+            <li>2030: Cross Island Line Phase 1 (Aviation Park to Bright Hill)</li>
+          </ul>
+
+        </section>
+        <section>
+          <h3>Meet the Rolling Stocks!</h3>
+
+          <div id="rollingstock-container">
+
+            <!-- Top navigation buttons -->
+            <div id="RSbuttons">
+              <button onclick="showPanel(0)">NSL/EWL</button>
+              <button onclick="showPanel(1)">NEL</button>
+              <button onclick="showPanel(2)">CCL</button>
+              <button onclick="showPanel(3)">DTL</button>
+              <button onclick="showPanel(4)">TEL</button>
+              <button onclick="showPanel(5)">BPLRT</button>
+              <button onclick="showPanel(6)">PGLRT/SKLRT</button>
+            </div>
+            <!-- Dynamic content container, shows stuff depending on which button was -->
+            <div id="rscontent-container">
+              <!-- Panel 1 -->
+              <div class="panel" id="panel-0">
+                <div class="sub-buttons">
+                  <!--chanegImage function params: Images to "dynamically" put in, index of the button (0 based)-->
+                  <button onclick="changeImage('images/c151-exterior.jpg', 0)">C151</button>
+                  <button onclick="changeImage('images/c651-exterior.jpg', 1)">C651</button>
+                  <button onclick="changeImage('images/c751b-exterior.jpg', 2)">C751B</button>
+                  <button onclick="changeImage('images/c151a-exterior.jpg', 3)">C151A</button>
+                  <button onclick="changeImage('images/c151b-exterior.jpg', 4)">C151B</button>
+                  <button onclick="changeImage('images/c151c-exterior.jpg', 5)">C151C</button>
+                  <button onclick="changeImage('images/r151-exterior.jpg', 6)">R151</button>
+                </div>
+                <img id="panel-image" src="images/blankimagetostopthevalidatorfromyellingatme.png" alt="Image Preview">
+                <p id="caption0" class="hidden"></p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container"></div>
+                  <h4>Description:</h4>
+                  <div class="desc-container"></div>
+                </div>
+              </div>
+
+              <!-- Panel 2 -->
+              <div class="panel" id="panel-1">
+                <div class="sub-buttons">
+                  <button onclick="changeImage('images/c751a-exterior.jpg', 0)">C751A</button>
+                  <button onclick="changeImage('images/c751c-exterior.jpg', 1)">C751B</button>
+                  <button onclick="changeImage('images/c851e-exterior.jpg', 2)">C851E</button>
+                </div>
+                <img id="panel-image-1" src="images/blankimagetostopthevalidatorfromyellingatme.png"
+                  alt="Image Preview">
+                <p id="caption1" class="hidden"></p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container"></div>
+                  <h4>Description:</h4>
+                  <div class="desc-container"></div>
+                </div>
+              </div>
+
+              <!-- Panel 3 -->
+              <div class="panel" id="panel-2">
+                <div class="sub-buttons">
+                  <button onclick="changeImage('images/c830-exterior.jpg', 0)">C830</button>
+                  <button onclick="changeImage('images/c830c-exterior.jpg', 1)">C830C</button>
+                </div>
+                <img id="panel-image-2" src="images/blankimagetostopthevalidatorfromyellingatme.png"
+                  alt="Image Preview">
+                <p id="caption2" class="hidden"></p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container"></div>
+                  <h4>Description:</h4>
+                  <div class="desc-container"></div>
+                </div>
+              </div>
+
+              <!-- Panel 4. Since it only has 1 rolling stock no need for changeImage-->
+              <div class="panel" id="panel-3">
+                <img src="images/c951-exterior.jpg" alt="C951 Train">
+                <p id="caption3" class="hidden"></p>
+                <p>C951</p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container">
+                    <ul>
+                      <li>Built: 2013-2017</li>
+                      <li>Manufacturer: Bombardier</li>
+                      <li>Family Name: Movia</li>
+                      <li>Numbers Built: 276 cars (92 sets)</li>
+                      <li>Service speed: 80 km/h</li>
+                      <li>Max speed: 90 km/h</li>
+                    </ul>
+                  </div>
+                  <h4>Description:</h4>
+                  <div class="desc-container">
+                    <p>C951 trains are the only type of train on the Downtown Line.</p>
+                    <p class="fun-fact">Fun Fact: There used to be a logo at the front that says: "SBS Transit -
+                      Downtown
+                      Line"!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 5. Since it only has 1 rolling stock no need for changeImage-->
+              <div class="panel" id="panel-4">
+                <img src="images/t251-exterior.jpg" alt="T251 Train">
+                <p id="caption4" class="hidden"></p>
+                <p>T251</p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container">
+                    <ul>
+                      <li>Built: 2017-2022</li>
+                      <li>Manufacturer: Bombardier</li>
+                      <li>Family Name: Movia</li>
+                      <li>Numbers Built: 364 cars (91 sets)</li>
+                      <li>Service speed: 80 km/h</li>
+                      <li>Max speed: 90 km/h</li>
+                    </ul>
+                  </div>
+                  <h4>Description:</h4>
+                  <div class="desc-container">
+                    <p>T251 trains are the only type of train on the Thomson-East Coast Line.</p>
+                    <p class="fun-fact">Fun Fact: The T251 trains are the first type of trains to have a 5 doors per
+                      side
+                      configuration!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 6 -->
+              <div class="panel" id="panel-5">
+
+                <!-- Specifications and description -->
+                <div class="sub-buttons">
+                  <button onclick="changeImage('images/c801-exterior.jpg', 0)">C801</button>
+                  <button onclick="changeImage('images/c801a-exterior.jpg', 1)">C801A</button>
+                  <button onclick="changeImage('images/c801b-exterior.jpg', 2)">C801B</button>
+                </div>
+                <img id="panel-image-5" src="images/blankimagetostopthevalidatorfromyellingatme.png" alt="C801">
+                <p id="caption5" class="hidden"></p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container"></div>
+                  <h4>Description:</h4>
+                  <div class="desc-container"></div>
+                </div>
+              </div>
+
+              <!-- Panel 7 -->
+              <div class="panel" id="panel-6">
+                <!-- Specifications and description -->
+                <div class="sub-buttons">
+                  <button onclick="changeImage('images/c810-exterior.jpg', 0)">C810/A</button>
+                  <button onclick="changeImage('images/c810d-exterior.jpg', 1)">C810D</button>
+                </div>
+                <img id="panel-image-6" src="images/blankimagetostopthevalidatorfromyellingatme.png" alt="C810">
+                <p id="caption6" class="hidden"></p>
+
+                <!-- Specifications and description -->
+                <div class="specs-desc">
+                  <h4>Specifications:</h4>
+                  <div class="specs-container"></div>
+                  <h4>Description:</h4>
+                  <div class="desc-container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Click the Moving Train!</h3>
+          <div id="game-container">
+            <div id="target-box"></div>
+          </div>
+          <p id="score-display">Score: 0</p>
+          <button id="reset-button">Reset Game</button>
+        </section>
+      </section>
     </div>
 
     <div id="content2" class="content-box hidden">
-        <p>This is Content 2.</p>
+      <section>
+
+        <h2>Public Buses in Singapore</h2>
+        <h3>Introduction</h3>
+        <p>The history of buses in Singapore dates back to the 1920s, when the Singapore Traction Company (STC) began
+          operating bus services. Over the decades, the bus network expanded significantly, becoming a crucial part of
+          Singapore's public transport system.</p>
+        <p>Now, 3.6 million rides taken per day on average as of Dec 2021, with over 300 scheduled bus services and over
+          100 short-trip variants operated by 4 different bus operators. In total, there are 5800 buses in operation as
+          of
+          2024.
+        </p>
+        <h3>Key Milestones</h3>
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">Humble beginnings</p>
+            <ul class="sub-list">
+              <li>1925: The Singapore Traction Company begins operating trolleybus services to replace the ill-fated
+                tram
+                system.</li>
+              <li>1927: Many former "mosquito-buses" (a informal form of "paratransit") are formalized into the bus
+                network,
+                that connected rural parts of Singapore to the town.</li>
+              <li>1941: During the Japanese Occupation during WWII, all bus operations were briefly unified under a
+                single
+                operator.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/Singapore_trolleybus_-_ca._1930.webp" alt="1920s Bus" width="300" class="milestone-image">
+          </div>
+        </div>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">Post-war troubles</p>
+            <ul class="sub-list">
+              <li>1945: STC slowly return to normal operations with its older fleet replaced by newer buses from the
+                UK.
+              </li>
+              <li>1950s: General discontent on the poor working conditions of the employees working for STC lead to
+                the
+                Hock
+                Lee bus riots in 1955. Which lead to the decline of the STC.</li>
+              <li>1955: Other Chinese bus companies established their presence in the city with replacement services.
+                Illegal "pirate taxis" also flourished during this time, offering a form of relief for stranded
+                commuters.
+              </li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/Singapore_-_Ayer_Rajah_Rd_1951.webp" alt="Bus along Ayer Rajah 1951" width="300"
+              class="milestone-image">
+          </div>
+        </div>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">Government interference</p>
+            <ul class="sub-list">
+              <li>1971: 10 Chinese bus companies merged to form Amalgamated Bus Company, Associated Bus Services and
+                United
+                Bus Company.</li>
+              <li>1973: The government urged the 3 companies to merge, leading to the formation of the Singapore Bus
+                Services (SBS).</li>
+              <li>1974: The government helped to overhaul management, work culture and the fleet of SBS. The
+                introduction
+                of
+                priority bus lanes also alleviated some burden from SBS.</li>
+              <li>1977: SBS introduced the first Double-Decker Bus (the Leyland Atlantean).</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/Leyland_Olympian_2x.webp" alt="Leyland Olympian 2 axle in the old SBS Livery" width="300"
+              class="milestone-image">
+          </div>
+        </div>
+
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">The 1980s and 1990s</p>
+            <ul class="sub-list">
+              <li>1982: There were growing concerns that SBS might turn complacent, given that it had a monopoly on
+                bus
+                services in Singapore.<br>As such, the government set-up a new operator, Trans-Island Bus Services
+                (TIBS),
+                to compete with SBS.</li>
+              <li>1987: When the MRT opened, many services were rationalised such that buses complimented the MRT by
+                "feeding" passengers to the MRT stations. Magnetic stored value cards (as used on the MRT) were also
+                implemented across the entire bus network to streamline fare collection.</li>
+              <li>1993: SBS introduced its first Air-Conditioned Double Decker bus (Leyland Olympian), and three years
+                later, TIBS introduced Singapore's first bendy buses (Mercedes O405G)</li>
+              <li>1996: SBS had expanded beyond bus operations including taxis (CityCab) and engineering works (SBS
+                Engineering). Hence, SBS Limited has rebranded to DelGro Corporation, with it's bus service subsidary
+                still
+                retaining the name SBS.</li>
+              <li>1999: SBS won a tender to operate the North East Line, hence, SBS rebranded to SBS Transit (SBST) to
+                reflect it's
+                multimodal services.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/Leyland_Olympian_3x.webp" alt="Leyland Olympian 3 axle in the old SBS Livery" width="300"
+              class="milestone-image">
+            <img src="images/HinoRK176.jpg" alt="TIBS Hino RK176" width="300" class="milestone-image">
+            <img src="images/tibs_mag.webp" alt="TIBS Mercedes O405G" width="300" class="milestone-image">
+          </div>
+        </div>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">The 2000s and 2010s</p>
+            <ul class="sub-list">
+              <li>2004: TIBS was merged into SMRT Corporation. TIBS was rebranded as SMRT Buses.</li>
+              <li>2006-2009: SBS Transit renewed it's fleet and introduced the first Euro 3 compliant bus and the
+                first
+                Wheelchair Accessible bus in Singapore, the Volvo B9TL. And in 2009, SBST and SMRT Buses introduced
+                low-entry Scania K230UB and Mercedes OC500LE buses respectively.</li>
+              <li>2009: LTA became the bus network planner, to work with commuters and the bus operators to improve
+                the
+                overall bus service.</li>
+              <li>2010: LTA introduced the Bus Service Enhancement Programme (BSEP) to improve bus services, by
+                increasing
+                the number of buses on the road. With 1000 government-funded buses added to the fleet, the initiative
+                aimed to reduce waiting times and enhance service reliability.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/B9TLCDGE.webp" alt="B9TL CDGE on 21" width="300" class="milestone-image">
+            <img src="images/SMB_108J_106A_28429.webp" alt="OC500LE" width="300" class="milestone-image">
+            <img src="images/SBS8083J_238_28229.webp" alt="K230UB" width="300" class="milestone-image">
+          </div>
+        </div>
+
+        <div class="list-flex">
+          <div class="list-text">
+            <p class="sub-title">2010s: The Government Steps in once again</p>
+            <ul class="sub-list">
+              <li>2014: LTA introduced the Bus Contracting Model (BCM) from 2016 onwards. Under this model, bus
+                operators
+                would bid for contracts to operate specific bus routes, with the government retaining ownership of the
+                bus
+                assets.</li>
+              <li>2016: The Bus Contracting Model brought in 2 new operators, Go-Ahead Singapore and Tower Transit
+                Singapore, to operate bus services in Singapore.</li>
+              <li>2020: By then, many old buses (that did not meet the Euro III emmission standards) were retired. A
+                Mercedes-Benz O405G plated TIB1238H has been preserved in Woodlands Bus Depot.</li>
+            </ul>
+          </div>
+          <div class="list-image">
+            <img src="images/A95_3Door.webp" alt="A95 3 door" width="300" class="milestone-image">
+          </div>
+        </div>
+        <section>
+          <h2 class="hiddenH2titletostopthevalidatorfromcomplaining">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</h2>
+          <p>Now, there are...</p>
+          <p class="current-upper">4 operators</p>
+          <p class="current-lower">shared among</p>
+          <p class="current-upper">300 bus services</p>
+          <p class="current-lower">with 100 short-trip services</p>
+          <p class="current-upper">3.6 million passengers</p>
+          <p class="current-lower">that commute on buses every day</p>
+          <p class="current-upper">5800 buses</p>
+          <p class="current-lower">that serve the bus network</p>
+        </section>
+      </section>
+
+      <p id="egg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
     </div>
 
     <div id="content3" class="content-box hidden">
-        <p>This is Content 3.</p>
-    </div>
+      <h2>Fun Facts!</h2>
+      <ul id="fun-facts">
+        <li>Did you know? At City Hall and Raffles Place stations, you can transfer almost seamlessly by walking across
+          the platforms between East West Line and North South Line. This is called a "Cross Platform Transfer"</li>
+        <li>There are also connecting tracks between the East West Line and North South Line at City Hall and Raffles
+          Place.</li>
+        <li>Did you know? North East Line is the world's first fully underground automated railway. Its also the only
+          line to use a 1500V DC overhead catenary (wires) on the MRT System. Its also the first line to have artworks
+          displayed at all its 17 stations.</li>
+        <li>Did you know? During the construction of the North East Line, workers building Punggol MRT station had to
+          take a shuttle to the construction site as the area back then was just jungle? There were many encounters with
+          wildlife during the construction.</li>
+        <li>Did you know? There was a MRT Line originally planned to serve the Eastern part of Singapore? Now it's part
+          of the Downtown Line (eastern section) and the Thomson-East Coast Line (East Coast section)</li>
+        <li>Did you know? Back when the Changi Airport Branch opened, trains from Changi Airport travelled all the way
+          to Boon Lay (East West Line's then terminus). But due to the lack of demand, it was shortened to terminate at
+          Tanah Merah, operating a shuttle like service.</li>
+        <li>Did you know? Shenton Way Bus Terminal is not near Shenton Way MRT station? This is because the Bus Terminal
+          was built before the MRT station.</li>
+        <li>Did you know? There used to be Premium bus services operated by SBS Transit? Now they are operated under
+          private bus companies as scheme B bus services. LTA has not given any additional information about it</li>
+        <li>Did you know? SBS Transit used to brand their express services (services with the suffix 'e') as "Fast
+          Forward"</li>
+        <li>Did you know? It was Trans-Island Bus Services that first started using electronic display systems (The
+          display that shows service destination and number)</li>
+        <li>Did you know? Some retired buses can get sold to other countries? One example is the old SBS Transit
+          Mercedes O405 buses exported to Thailand where they still run today!</li>
+        <li>Did you know? Many bus service numbers are given according to where they ply?</li>
+      </ul>
 
+      <h2>Trivia Quiz!</h2>
+      <div class="trivia-quiz-start" id="quiz-start-para">
+        <p>This quiz is about the fun facts above</p>
+        <button id="startQuiz">Whenever you're ready</button>
+      </div>
+      <div class="trivia-quiz hidden" id="ffQuiz">
+        <fieldset>
+          <legend>1. Which stations have cross platform transfers?</legend>
+          <input type="radio" name="q1" value="Correct"> City Hall and Raffles Place
+          <input type="radio" name="q1" value="Wrong"> Yio Chu Kang and Ang Mo Kio
+          <input type="radio" name="q1" value="Wrong"> Marina Bay and Marina South Pier
+          <input type="radio" name="q1" value="Wrong"> Bukit Panjang and Chua Chu Kang
+        </fieldset>
+        <fieldset>
+          <legend>2. Which Line uses a 1500V DC Overhead Catenary?</legend>
+          <input type="radio" name="q2" value="Wrong"> Downtown Line
+          <input type="radio" name="q2" value="Wrong"> North South Line
+          <input type="radio" name="q2" value="Correct"> North East Line
+          <input type="radio" name="q2" value="Wrong"> Circle Line
+        </fieldset>
+        <fieldset>
+          <legend>3. Is Shenton Way Bus Terminal at Shenton Way MRT Station?</legend>
+          <input type="radio" name="q3" value="Wrong"> Yes
+          <input type="radio" name="q3" value="Correct"> No
+        </fieldset>
+        <button id="btnSubmit">Submit Quiz</button>
+        <h3 id="scorebox">Not submitted</h3>
+
+        <button id="reset-ffQuiz">Toggle fun facts</button>
+      </div>
+
+
+    </div>
+  </main>
 </body>
 
 </html>
