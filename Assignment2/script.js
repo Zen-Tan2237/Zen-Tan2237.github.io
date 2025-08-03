@@ -363,14 +363,21 @@ function CheckAns() {
   for (let i = 0; i < MAX_QUESTIONS; i++) {
     CheckOneQn(i + 1, "Correct");
   }
+  if (ffQuizScore > 3){
+    console.log("Seems like you've stumbled upon one of my several easter eggs");
+  }
   scorebox.innerHTML = "Score:" + ffQuizScore;
+  
+  ffQuizScore = 0;
+
 }
 btnSubmit.addEventListener("click", CheckAns);
 
 function CheckOneQn(qnNo, CorrAns) {
   let qTemp;
   qTemp = document.querySelector("input[name='q" + qnNo + "']:checked").value;
-  if (qTemp == CorrAns) ffQuizScore++;
+  if (qTemp == CorrAns && ffQuizScore <= 3) ffQuizScore++;
+
   console.log(qTemp); //check q1 value retrieved
 }
 
@@ -388,6 +395,7 @@ function toggleFunFacts() {
       question++;
     }
   }
+
   ffQuizScore = 0;
 }
 

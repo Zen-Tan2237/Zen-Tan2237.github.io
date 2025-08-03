@@ -185,12 +185,13 @@ section h3 {
   margin-left: 1rem;
 }
 
-.hiddenH2titletostopthevalidatorfromcomplaining {
-  display: none;
+#mobileHidden {
+  display: block;
+  text-align: center;
 }
 
-img {
-  width: 100%;
+.hiddenH2titletostopthevalidatorfromcomplaining {
+  display: none;
 }
 
 /* Rolling Stock Section */
@@ -385,6 +386,10 @@ img {
     border: 2px solid #333;
     background-color: #fafafa;
     overflow: hidden;
+  }
+
+  #mobileHidden {
+    display: none;
   }
 }
 
