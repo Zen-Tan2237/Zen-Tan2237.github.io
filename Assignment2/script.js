@@ -388,13 +388,6 @@ function toggleFunFacts() {
   funFactsContainer.classList.remove('hidden');
   startQuizContainer.classList.remove('hidden');
   quizContainer.classList.add('hidden');
-  let question = 1;
-  for (let i = 0; i < (MAX_QUESTIONS * 4); i++) {
-    document.querySelector("input[name='q" + question + "']").value = " ";
-    if (MAX_QUESTIONS % 4 === 0) {
-      question++;
-    }
-  }
 
   ffQuizScore = 0;
 }

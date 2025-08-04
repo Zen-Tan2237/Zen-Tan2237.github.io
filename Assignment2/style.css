@@ -379,6 +379,9 @@ section h3 {
 }
 
 @media (max-width:500px) {
+  img {
+    width: 70dvw !important;
+  }
 
   #game-container {
     position: relative;
