@@ -322,7 +322,9 @@ section h3 {
   margin-top: 10px;
 }
 
-
+.answers{
+  display: inline-block;
+}
 
 @media (max-width:799px) {
   .landing-section p {
@@ -371,12 +373,12 @@ section h3 {
     display: block;
   }
 
+  .answers{
+    display:block;
+  }
 }
 
 @media (max-width:500px) {
-  img {
-    width: 70dvw !important;
-  }
 
   #game-container {
     position: relative;
